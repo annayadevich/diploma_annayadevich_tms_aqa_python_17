@@ -3,6 +3,7 @@ import allure
 
 URL = "https://petstore.swagger.io/v2/"
 
+
 @allure.feature("POST")
 @allure.title("Create pet")
 @allure.id("1")
@@ -46,14 +47,16 @@ def test_add_pet():
     assert get_response.status_code == 404
 
 
+def test_upload_image():
+    base_url = "https://petstore.swagger.io/v2"
+    pet_id = 123
+    file_path = "D:\Work\Test data\Pictures\pngformat.png"
 
-# def test_upload_image():
-#     base_url = "https://petstore.swagger.io/v2"
-#     pet_id = 123
-#     file_path = "D:\Work\Test data\Pictures\pngformat.png"
-#
-#     files = {"file": open(file_path, "rb")}
-#     response = requests.post(f"{base_url}/pet/{pet_id}/uploadImage", files=files)
-#
-#     assert response.status_code == 200, f"Expected status code 200, but got {response.status_code}"
-#     assert "uploaded" in response.text, "File upload failed"
+    files = {"file": open(file_path, "rb")}
+    response = requests.post(f"{base_url}/pet/{pet_id}/uploadImage", files=files)
+
+    jsn = response.json()
+    assert response.status_code == 200, f"Expected status code 200, but got {response.status_code}"
+    assert "uploaded" in response.text, "File upload failed"
+    print()
+    print(jsn)
