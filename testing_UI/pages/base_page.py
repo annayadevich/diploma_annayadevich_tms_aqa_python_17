@@ -16,12 +16,6 @@ class BasePage:
         return element
 
     def text(self, locator: Tuple[str, str], timeout: int = 5) -> str:
-        """
-        RETURN TEXT
-        :param locator:
-        :param timeout:
-        :return:
-        """
         element = WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
         return element.text
 
@@ -31,14 +25,4 @@ class BasePage:
     def wait_for_element_to_be_clickable(self, locator: Tuple[str, str], timeout: int = 5):
         return WebDriverWait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
 
-    def scroll_to(self):
-        pass
 
-    def input(self):
-        pass
-
-    def get_title(self):
-        pass
-
-    def select(self):
-        pass

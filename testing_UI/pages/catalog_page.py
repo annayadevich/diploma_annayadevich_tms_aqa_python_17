@@ -1,4 +1,4 @@
-from testing_UI.locators.catalog_page_locators import BN_ONLINER_PRIME, BN_ZOO, BN_ZOO_COSMETICS
+from testing_UI.locators.catalog_page_locators import BN_ELECTRONIKA, BN_AUDIO, BN_HEADPHONES, CHECKBOX_GENERAL_PRIME
 from testing_UI.pages.base_page import BasePage
 from selenium.webdriver.common.action_chains import ActionChains
 
@@ -6,18 +6,29 @@ from selenium.webdriver.common.action_chains import ActionChains
 class CatalogPage(BasePage):
 
     @property
-    def zoo(self):
-        return self.wait_for(BN_ZOO)
+    def audio(self):
+        return self.wait_for(BN_AUDIO)
 
     @property
-    def zoo_cosmetics(self):
-        return self.wait_for(BN_ZOO_COSMETICS)
+    def audio_headphones(self):
+        return self.wait_for(BN_HEADPHONES)
 
-    def click_onliner_prime(self):
-        self.click(BN_ONLINER_PRIME)
+    @property
+    def checkbox_general(self):
+        return self.wait_for(CHECKBOX_GENERAL_PRIME)
 
-    def go_to_pet_cosmetics(self):
+    def click_electronika(self):
+        self.click(BN_ELECTRONIKA)
+
+    @property
+    def checkbox_general_1(self):
+        return self.wait_for(CHECKBOX_GENERAL_PRIME)
+
+    def select_checkbox(self):
+        self.click(CHECKBOX_GENERAL_PRIME)
+
+    def go_to_audio_headphones(self):
         action = ActionChains(self.driver)
-        action.move_to_element(self.zoo).perform()
-        action.move_to_element(self.zoo_cosmetics).perform()
+        action.move_to_element(self.audio).perform()
+        action.move_to_element(self.audio_headphones).perform()
         action.click().perform()

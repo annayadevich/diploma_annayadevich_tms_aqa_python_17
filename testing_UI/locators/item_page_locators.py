@@ -8,4 +8,5 @@ TXT_FIRST_PRICE = By.XPATH, '//div[@class="offers-description__price offers-desc
 
 BOX_YO = By.XPATH, '//div[@class="dropdown-style__checkbox-sign"][contains(text(), "ЙО!")]'
 
-SEL_MANUF = By.XPATH, '(//div[contains(@class, "input-style__real")])[1]'
+SEL_MANUF = By.XPATH, '//*[contains(text(), "Наушники Xiaomi Redmi Buds 4 Active M2232E1 ")]'
+

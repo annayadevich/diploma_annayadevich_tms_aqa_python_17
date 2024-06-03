@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 
-BN_ONLINER_PRIME = By.XPATH, '//span[contains(text(), "Onlíner Prime")]'
-BN_ZOO = By.XPATH, '//*[contains(text(), "Зоотовары")]'
-BN_ZOO_COSMETICS = By.XPATH, '//a[contains(@href, "pet_cosmetics")]'
+BN_ELECTRONIKA = By.XPATH, '//span[contains(text(), "Электроника")]'
+BN_AUDIO = By.XPATH, '//*[contains(text(), "Аудиотехника")]'
+BN_HEADPHONES = By.XPATH, '//*[contains(text(), "Наушники")]'
+
+CHECKBOX_GENERAL_PRIME = By.XPATH, '(//div[@class="i-checkbox__faux"])[1]'
