@@ -1,11 +1,15 @@
 import requests
 import allure
+import pytest
 
 URL = "https://petstore.swagger.io/v2/"
+
 
 @allure.feature("GET")
 @allure.title("Get pet by petID")
 @allure.id("1")
+@pytest.mark.api_testing
+@pytest.mark.new_features_testing
 def test_get_pet_id():
     pet_id = 123
     response = requests.get(
@@ -20,12 +24,14 @@ def test_get_pet_id():
         assert "name" in pet_data, "There is no pet name"
     else:
         print("The pet was not found")
-
     print("The pet was found")
+
 
 @allure.feature("GET")
 @allure.title("Find pet by status")
 @allure.id("2")
+@pytest.mark.api_testing
+@pytest.mark.new_features_testing
 def test_pet_find_by_status():
     get_response = requests.get(
         url=f"{URL}pet/findByStatus",

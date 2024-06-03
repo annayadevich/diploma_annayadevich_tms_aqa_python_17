@@ -9,14 +9,16 @@ URL = "https://petstore.swagger.io/v2/"
 @allure.title("Delete pet")
 @allure.id("1")
 @pytest.mark.xfail
+@pytest.mark.api_testing
+@pytest.mark.new_features_testing
 def test_delete_pet():
     payload = {
         "id": 1,
         "category": {
             "id": 1,
-            "name": "dog"
+            "name": "cat"
         },
-        "name": "Amily",
+        "name": "Lyna",
         "photoUrls": [
             "string"
         ],

@@ -1,18 +1,21 @@
 import requests
 import allure
+import pytest
 URL = "https://petstore.swagger.io/v2/"
 
 @allure.feature("PUT")
 @allure.title("Update pet")
 @allure.id("1")
+@pytest.mark.api_testing
+@pytest.mark.new_features_testing
 def test_update_pet():
     payload = {
         "id": 1,
         "category": {
             "id": 1,
-            "name": "dog"
+            "name": "cat"
         },
-        "name": "Amily",
+        "name": "Lyna",
         "photoUrls": [
             "string"
         ],
@@ -32,14 +35,13 @@ def test_update_pet():
     )
     assert post_response.status_code == 200
     pet_id = post_response.json()["id"]
-
     update_payload = {
         "id": 1,
         "category": {
             "id": 1,
             "name": "cat"
         },
-        "name": "Lyna",
+        "name": "Lyna_1",
         "photoUrls": [
             "string"
         ],
@@ -51,7 +53,6 @@ def test_update_pet():
         ],
         "status": "available"
     }
-
     put_response = requests.put(
         url=f"{URL}pet",
         headers={"accept": "application/json",
@@ -67,13 +68,19 @@ def test_update_pet():
     assert get_response.status_code == 200
     print(get_response.json())
 
-# def test_update_pet_with_form_data(pet_id=None):
-#     post_response = requests.post(
-#         url=f"{URL}pet/{pet_id}",
-#         params={"petid": 123,
-#                 "name": "Lyna",
-#                 "status": "available"},
-#         headers={"accept": "application/json"}
-#     )
-#     assert post_response.status_code == 200
+
+@allure.feature("PUT")
+@allure.title("Update pet via parm")
+@allure.id("1")
+@pytest.mark.api_testing
+@pytest.mark.new_features_testing
+def test_update_pet_with_form_data():
+    post_response = requests.post(
+        url=f"{URL}pet/3",
+        params={"petid": 123,
+                "name": "Lyna_3",
+                "status": "available"},
+        headers={"accept": "application/json"}
+    )
+    assert post_response.status_code == 200
 

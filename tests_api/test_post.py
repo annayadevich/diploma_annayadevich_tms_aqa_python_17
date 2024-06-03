@@ -1,5 +1,6 @@
 import requests
 import allure
+import pytest
 
 URL = "https://petstore.swagger.io/v2/"
 
@@ -7,14 +8,17 @@ URL = "https://petstore.swagger.io/v2/"
 @allure.feature("POST")
 @allure.title("Create pet")
 @allure.id("1")
+@pytest.mark.api_testing
+@pytest.mark.new_features_testing
+@pytest.mark.smoke
 def test_add_pet():
     payload = {
         "id": 3,
         "category": {
             "id": 3,
-            "name": "dog"
+            "name": "cat"
         },
-        "name": "Amily",
+        "name": "Lyna",
         "photoUrls": [
             "string"
         ],
@@ -47,6 +51,9 @@ def test_add_pet():
     assert get_response.status_code == 404
 
 
+@pytest.mark.api_testing
+@pytest.mark.new_features_testing
+@pytest.mark.xfail  #if the download file is not found
 def test_upload_image():
     base_url = "https://petstore.swagger.io/v2"
     pet_id = 123
