@@ -6,7 +6,7 @@ URL = "https://petstore.swagger.io/v2/"
 
 
 @allure.feature("GET")
-@allure.title("Get pet by petID")
+@allure.title("Get pet by pet ID")
 @allure.id("1")
 @pytest.mark.api_testing
 @pytest.mark.new_features_testing

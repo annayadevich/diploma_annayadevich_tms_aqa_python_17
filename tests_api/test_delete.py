@@ -6,7 +6,7 @@ import allure
 URL = "https://petstore.swagger.io/v2/"
 
 @allure.feature("DELETE")
-@allure.title("Delete pet")
+@allure.title("Delete pet by ID")
 @allure.id("1")
 @pytest.mark.xfail
 @pytest.mark.api_testing

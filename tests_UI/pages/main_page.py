@@ -13,3 +13,5 @@ class MainPage(BasePage):
         with allure.step("Step 1: Click to the 'Catalog' button"):
             time.sleep(1)
 
+
+

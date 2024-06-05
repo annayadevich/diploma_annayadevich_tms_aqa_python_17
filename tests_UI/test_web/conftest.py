@@ -10,3 +10,4 @@ def driver():
     driver = webdriver.Chrome(options=chrome_options)
     driver.get("https://www.onliner.by/")
     yield driver
+

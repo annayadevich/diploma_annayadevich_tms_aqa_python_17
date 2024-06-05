@@ -15,3 +15,5 @@ class CartPage(BasePage):
         self.wait_for(SELECTED_HEADPHONES)
         title = self.driver.find_element(*SELECTED_HEADPHONES)
         return title.text
+
+

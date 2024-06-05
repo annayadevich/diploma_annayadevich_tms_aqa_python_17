@@ -26,3 +26,6 @@ class BasePage:
         return WebDriverWait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
 
 
+
+
+

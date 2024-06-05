@@ -13,9 +13,9 @@ URL = "https://petstore.swagger.io/v2/"
 @pytest.mark.smoke
 def test_add_pet():
     payload = {
-        "id": 3,
+        "id": 4,
         "category": {
-            "id": 3,
+            "id": 4,
             "name": "cat"
         },
         "name": "Lyna",
@@ -24,7 +24,7 @@ def test_add_pet():
         ],
         "tags": [
             {
-                "id": 3,
+                "id": 4,
                 "name": "string"
             }
         ],

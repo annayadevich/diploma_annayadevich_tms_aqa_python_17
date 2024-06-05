@@ -41,3 +41,5 @@ class CatalogPage(BasePage):
             time.sleep(1)
         with allure.step("Step 5: Select checkbox 'GENERAL_PRIME'"):
             time.sleep(1)
+
+

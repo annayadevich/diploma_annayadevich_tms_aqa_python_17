@@ -21,7 +21,7 @@ def test_update_pet():
         ],
         "tags": [
             {
-                "id": 1,
+                "id": 2,
                 "name": "string"
             }
         ],

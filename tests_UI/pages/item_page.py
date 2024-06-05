@@ -3,6 +3,7 @@ from tests_UI.pages.base_page import BasePage
 import allure
 import time
 
+
 class ItemPage(BasePage):
 
     def add_to_cart(self):
@@ -20,5 +21,3 @@ class ItemPage(BasePage):
         self.click(SELECTED_PR)
         with allure.step("Step 6: Select first item"):
             time.sleep(1)
-
-
